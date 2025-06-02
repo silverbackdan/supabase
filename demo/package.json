@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
+    "build": "NUXT_PUBLIC_SUPABASE_URL=https://url NUXT_PUBLIC_SUPABASE_KEY=abcdefg NUXT_SUPABASE_SERVICE_KEY=not-a-key nuxt build",
     "dev": "nuxt dev",
     "lint": "eslint .",
     "postinstall": "nuxt prepare"
