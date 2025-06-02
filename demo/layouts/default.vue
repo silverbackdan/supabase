@@ -2,8 +2,8 @@
   <div>
     <AppHeader />
 
-    <UMain>
+    <div>
       <slot />
-    </UMain>
+    </div>
   </div>
 </template>

@@ -2,8 +2,6 @@
 const supabase = useSupabaseClient()
 const user = useSupabaseUser()
 
-const toast = useToast()
-
 const sign = ref<'in' | 'up'>('in')
 
 watchEffect(() => {
@@ -54,7 +52,7 @@ const signUp = async (email, password) => {
   })
   if (error) displayError(error)
   else {
-    toast.add({
+    console.log({
       title: 'Sign up successful',
       icon: 'i-lucide-check-circle',
       color: 'success',
@@ -83,17 +81,14 @@ const displayError = (error) => {
 
 <template>
   <UContainer class="h-[calc(100vh-var(--ui-header-height))] flex items-center justify-center px-4">
-    <UPageCard class="max-w-sm w-full">
-      <UAuthForm
+    <div class="max-w-sm w-full">
+      <div
         :title="sign === 'in' ? 'Login' : 'Sign up'"
         icon="i-lucide-user"
         :fields="fields"
         :providers="providers"
         @submit="onSubmit"
       >
-        <template
-          #description
-        >
           {{ sign === 'up' ? 'Already have an account?' : 'Don\'t have an account?' }}
           <UButton
             variant="link"
@@ -102,8 +97,7 @@ const displayError = (error) => {
           >
             {{ sign === 'in' ? 'Sign up' : 'Sign in' }}
           </UButton>.
-        </template>
-      </UAuthForm>
-    </UPageCard>
+      </div>
+    </div>
   </UContainer>
 </template>

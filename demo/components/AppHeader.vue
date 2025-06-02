@@ -9,8 +9,8 @@ const logout = async () => {
 </script>
 
 <template>
-  <UHeader :toggle="false">
-    <template #left>
+  <div :toggle="false">
+    <div>
       <UButton
         label="Source"
         target="_blank"
@@ -28,10 +28,10 @@ const logout = async () => {
         icon="i-lucide-external-link"
         class="hidden sm:flex"
       />
-    </template>
+    </div>
 
-    <template #right>
-      <UColorModeButton variant="link" />
+    <div>
+      <div variant="link" />
 
       <UButton
         v-if="user"
@@ -41,6 +41,6 @@ const logout = async () => {
       >
         Logout
       </UButton>
-    </template>
-  </UHeader>
+    </div>
+  </div>
 </template>

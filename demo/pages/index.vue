@@ -65,7 +65,7 @@ const fetchTasksFromServerRoute = async () => {
 
 <template>
   <UContainer>
-    <UPageSection
+    <div
       title="Todo List."
       description="Demo of a simple todo list app using Nuxt and Supabase."
       headline="Nuxt x Supabase"
@@ -138,7 +138,7 @@ const fetchTasksFromServerRoute = async () => {
           </div>
         </div>
       </div>
-    </UPageSection>
+    </div>
 
     <UModal v-model:open="isModalOpen">
       <template #content>
